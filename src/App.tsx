@@ -12,8 +12,8 @@ function App() {
 	]);
 
 	const toggleTodo = (id: number) => {
-		setTodos(prev =>
-			prev.map(todo => {
+		setTodos((prev) =>
+			prev.map((todo) => {
 				if (todo.id === id) {
 					const updated = new Todo(todo.id, todo.text, !todo.done);
 					return updated;
@@ -26,7 +26,10 @@ function App() {
 	return (
 		<div>
 			<h1>My Todos</h1>
-			<TodoList todos={todos} onToggle={toggleTodo} />
+			<TodoList
+				todos={todos}
+				onToggle={toggleTodo}
+			/>
 		</div>
 	);
 }
