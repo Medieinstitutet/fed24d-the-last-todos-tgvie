@@ -26,7 +26,7 @@ function App() {
 
 	const addTodo = (text: string) => {
 		// ID is unique for every task
-		const newId = todos.length > 0 ? Math.max(...todos.map(t => t.id)) + 1 : 1;
+		const newId = todos.length > 0 ? Math.max(...todos.map((t) => t.id)) + 1 : 1;
 		const newTodo = new Todo(newId, text);
 		setTodos([newTodo, ...todos]);
 	};
@@ -37,10 +37,21 @@ function App() {
 			<div className='bg-white rounded-xl shadow-lg w-full m-5 max-w-lg p-8'>
 				<h1>To-dos</h1>
 				<TodoList
-					todos={todos}
+					// Sorting, completed tasks on the bottom, non-completed on top
+					todos={[...todos].sort((a, b) => Number(a.done) - Number(b.done))}
+					
+					/* todos={[...todos].sort((a,b) => {
+					if (a.done === false && b.done === true) {
+						return -1;
+					} else if (a.done === true && b.done === false) {
+						return 1;
+					} else {
+						return 0;
+					}
+					})} */
 					onToggle={toggleTodo}
 				/>
-				<TodoForm onAddTodo={addTodo}/>
+				<TodoForm onAddTodo={addTodo} />
 			</div>
 		</div>
 	);
