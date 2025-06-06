@@ -18,16 +18,16 @@ const TodoForm = ({ onAddTodo }: IProps) => {
 	return (
 		<form
 			onSubmit={handleSubmit}
-            className='flex flex-col justify-center items-center mt-10'>
+			className='flex flex-col justify-center items-center mt-10'>
 			<input
 				type='text'
 				value={text}
 				onChange={(e) => setText(e.target.value)}
-				placeholder='click here to add new task...'
-				className='w-full outline-0 text-center'
-            />
+				placeholder='click here to add new task'
+				className='w-full outline-0 text-center focus:placeholder-transparent'
+			/>
 
-            {/* SVG button */}
+			{/* SVG button */}
 			<div className='flex justify-center mt-5'>
 				<button className='flex items-center justify-center bg-rose-200 text-white font-bold rounded-full w-16 h-16 hover:scale-110 transition cursor-pointer'>
 					<svg

@@ -8,8 +8,8 @@ function App() {
 		new Todo(1, '✅ Click on a task to mark it as done'),
 		new Todo(2, '♻️ Click on a completed task to undo it'),
 		new Todo(3, '➕ Use the form below to add your own tasks'),
-		new Todo(4, `💾 Your todos are saved in the browser automatically, try to restart this page`),
-		new Todo(5, '⬆️ Tasks are sorted to keep unfinished ones at the top')
+		new Todo(4, '⬆️ Tasks are sorted to keep unfinished ones at the top'),
+		new Todo(5, `💾 Your todos are saved in the browser automatically, try to restart this page`)
 	]);
 
 	const toggleTodo = (id: number) => {
