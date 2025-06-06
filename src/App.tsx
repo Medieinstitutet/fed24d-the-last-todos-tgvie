@@ -33,6 +33,11 @@ function App() {
 		setTodos([newTodo, ...todos]);
 	};
 
+	// Delete a task by ID
+	const deleteTodo = (id: number) => {
+		setTodos(prev => prev.filter(todo => todo.id !== id));
+	};
+
 	return (
 		<div className='min-h-screen flex items-center justify-center bg-gradient-to-br from-rose-200 to-slate-600'>
 			{/* Todo Card */}
@@ -52,6 +57,7 @@ function App() {
 					}
 					})} */
 					onToggle={toggleTodo}
+					onDelete={deleteTodo}
 				/>
 				<TodoForm onAddTodo={addTodo} />
 			</div>
