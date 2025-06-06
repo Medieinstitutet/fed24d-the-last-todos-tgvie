@@ -4,6 +4,7 @@ import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
 
 function App() {
+	// Default todo list
 	const [todos, setTodos] = useState<Todo[]>([
 		new Todo(1, '✅ Click on a task to mark it as done'),
 		new Todo(2, '♻️ Click on a completed task to undo it'),
@@ -12,6 +13,7 @@ function App() {
 		new Todo(5, `💾 Your todos are saved in the browser automatically, try to restart this page`)
 	]);
 
+	// Toggle done/un-done a todo by ID
 	const toggleTodo = (id: number) => {
 		setTodos((prev) =>
 			prev.map((todo) => {
@@ -24,8 +26,8 @@ function App() {
 		);
 	};
 
+	// Add new todo to list and give it a unique ID
 	const addTodo = (text: string) => {
-		// ID is unique for every task
 		const newId = todos.length > 0 ? Math.max(...todos.map((t) => t.id)) + 1 : 1;
 		const newTodo = new Todo(newId, text);
 		setTodos([newTodo, ...todos]);
