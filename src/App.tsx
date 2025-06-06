@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import Todo from './models/Todo';
+import TodoList from './components/TodoList';
 
 function App() {
 	const [todos, setTodos] = useState<Todo[]>([
@@ -24,6 +26,7 @@ function App() {
 	return (
 		<div>
 			<h1>My Todos</h1>
+			<TodoList todos={todos} onToggle={toggleTodo} />
 		</div>
 	);
 }
