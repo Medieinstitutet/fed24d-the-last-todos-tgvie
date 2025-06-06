@@ -1,17 +1,31 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Todo from './models/Todo';
 import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
 
 function App() {
-	// Default todo list
-	const [todos, setTodos] = useState<Todo[]>([
-		new Todo(1, '✅ Click on a task to mark it as done'),
-		new Todo(2, '♻️ Click on a completed task to undo it'),
-		new Todo(3, '➕ Use the form below to add your own tasks'),
-		new Todo(4, '⬆️ Tasks are sorted to keep unfinished ones at the top'),
-		new Todo(5, `💾 Your todos are saved in the browser automatically, try to restart this page`)
-	]);
+	const [todos, setTodos] = useState<Todo[]>(() => {
+		const saved = localStorage.getItem('todos');
+		if (saved) {
+			// Parse e-create Todo instances
+			const parsed = JSON.parse(saved);
+			return parsed.map((t: {id: number, text: string, done: boolean}) => new Todo(t.id, t.text, t.done));
+		}
+
+		// Default todos on first visit
+		return [
+			new Todo(1, '✅ Click on a task to mark it as done'),
+			new Todo(2, '♻️ Click on a completed task to undo it'),
+			new Todo(3, '➕ Use the form below to add your own tasks'),
+			new Todo(4, '⬆️ Tasks are sorted to keep unfinished ones at the top'),
+			new Todo(5, `💾 Your todos are saved in the browser automatically, try to restart this page`)
+		];
+	});
+
+	// Update localStorage when todos changes
+	useEffect(() => {
+		localStorage.setItem('todos', JSON.stringify(todos));
+	}, [todos]);
 
 	// Toggle done/un-done a todo by ID
 	const toggleTodo = (id: number) => {
