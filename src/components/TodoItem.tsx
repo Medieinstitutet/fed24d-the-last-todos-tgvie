@@ -16,7 +16,10 @@ const TodoItem = ({ todo, onToggle }: IProps) => {
 				}`}>
 				{todo.done && '👏'}
 			</span>
-			<span className={`p-2 rounded-md ${todo.done ? 'text-slate-300 line-through bg-rose-50' : 'text-slate-800'}`}>
+			<span
+				className={`p-2 rounded-md ${
+					todo.done ? 'text-slate-300 line-through bg-rose-50' : 'text-slate-800 hover:bg-rose-50'
+				}`}>
 				{todo.text}
 			</span>
 		</li>

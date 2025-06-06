@@ -31,6 +31,22 @@ function App() {
 					todos={todos}
 					onToggle={toggleTodo}
 				/>
+				<div className='flex justify-center mt-10'>
+					<button className='flex items-center justify-center bg-rose-200 text-white font-bold rounded-full w-16 h-16 hover:scale-110 transition cursor-pointer'>
+						<svg
+							className='w-7 h-7'
+							viewBox='0 0 24 24'
+							fill='none'
+							stroke='currentColor'
+							strokeWidth='4'>
+							<path
+								d='M12 5v14M5 12h14'
+								strokeLinecap='round'
+								strokeLinejoin='round'
+							/>
+						</svg>
+					</button>
+				</div>
 			</div>
 		</div>
 	);
