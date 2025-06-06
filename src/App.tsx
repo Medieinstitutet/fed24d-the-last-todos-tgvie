@@ -24,12 +24,14 @@ function App() {
 	};
 
 	return (
-		<div>
-			<h1>My Todos</h1>
-			<TodoList
-				todos={todos}
-				onToggle={toggleTodo}
-			/>
+		<div className='min-h-screen flex items-center justify-center bg-gradient-to-br from-rose-200 to-slate-600'>
+			<div className='bg-white rounded-xl shadow-lg w-full m-5 max-w-lg p-8'>
+				<h1>To-dos</h1>
+				<TodoList
+					todos={todos}
+					onToggle={toggleTodo}
+				/>
+			</div>
 		</div>
 	);
 }
