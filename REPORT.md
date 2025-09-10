@@ -1,9 +1,10 @@
 # 📌 Rättningsrapport – fed24d-the-last-todos-tgvie
 
 ## 🎯 Uppgiftens Krav:
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/Tfc19Mhg)
 # Inlämningsuppgift Todo
 
-I denna inlämningsuppgift kommer ni att skapa er egen todo-lista i en react-applikation.
+I denna inlämningsuppgift kommer ni att skapa er egen todo-lista.
 Sidan skall visa ett antal punkter som skall göras. Dessa skall då komma upp på skärmen i form av en lista. När uppgiften är slutförd skall användaren kunna markera uppgiften som slutförd och uppgiften skall då tas bort från listan.
 
 ## Betyg G
@@ -11,17 +12,20 @@ Sidan skall visa ett antal punkter som skall göras. Dessa skall då komma upp p
 - Skapa en hårdkodad lista med punkter att göra (hitta på egna punkter, dessa skall inte bara vara en text)
 - Presentera listan på skärmen, helst med lite kontroll. Detta betyder i en html-struktur t.ex. i en ul/li-lista
 - Implementera klickhändelse för att hantera borttagandet av en todo.
-- Todo markeras som klar/tas bort från skärmen och markeras som klar i javascript-listan.
+- Todo markeras som klar på skärmen och markeras som klar i javascript-listan.
+- Ni behöver använda localStorage så att listan inte börjar om från början varje gång sidan används.
+- Ni behöver använda er av en komponent.
+- Ni behöver använda er av state med en lista med objekt.
 
 ## Betyg VG
 
 - Alla punkter under G
 - Kunna visa även klara händelser och klicka tillbaka den så att de blir oklara igen.
 - Skapa ett formulär som tillåter att en användare skapar nya todos efterhand.
-- Använda lifting state up för att dela upp dina komponenter bättre.
 - Kunna sortera ordningen på dina todos.
-- Implementera ett valfritt grafiskt ramverk till din todolista, t.ex. material ui eller tailwind.
-- Egen css får gärna skrivas och då skall ni ha en bra struktur och använda flex eller grid på ett bra sätt.
+- Implementera ett valfritt grafiskt ramverk, t.ex. tailwind eller material ui.
+- Ni behöver ha minst tre komponenter.
+- Ni måste använda Lifting State Up.
 
 ## Allmänt
 
@@ -50,7 +54,7 @@ för att köra projektet.
 
 
 ## 🏆 **Betyg: VG**
-📌 **Motivering:** Koden uppfyller alla krav för betyg VG. Studenten har lyckats skapa en todo-applikation med både de grundläggande och avancerade funktionerna. Funktionalitet för att markera och avmarkera todos är på plats, det finns ett formulär för att lägga till nya todos, och state lifting har använts för komponentfördelning. Todos är sorterade och tailwindcss används för styling.
+📌 **Motivering:** Alla krav för betyg G och VG är uppfyllda. Studenten har visat förståelse för state management, komponentbaserad utveckling och användning av ett CSS-ramverk. Koden är väldokumenterad, strukturerad och omfattar all nödvändig funktionalitet, inklusive att hantera klickhändelse och lagring i localStorage.
 
 💡 **Förbättringsförslag:**  
-Projektet är generellt väl genomfört och täcker alla krav som ställts upp för VG. Några mindre förbättringsområden kan vara att lägga till mer utförlig kommentarering i koden för att förklara vad funktioner gör, samt förbättra hantering av möjliga kantfall som felaktig inmatning i formulär. Eventuellt kan testning läggas till för att säkerställa att alla funktioner fungerar som förväntat vid uppdateringar eller efter mer omfattande förändringar.
+Trots att kodkvaliteten är hög och funktionaliteten är tydlig, finns det små förbättringsmöjligheter: 1) Implementera typkontroller mer strikt i funktioner där det är möjligt för att undvika oförutsedda typer. 2) Ev. skapa en separat CSS-fil för specialanpassade stilar för att hålla Tailwind-implementationen mer renodlad. 3) Kommentarer är användbara i stegvis dokumentation av en applikation men att hålla dem kortfattade och koncisa kan skapa bättre överskådlighet.
